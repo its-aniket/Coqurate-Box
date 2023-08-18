@@ -64,8 +64,6 @@ const Navbar = async () => {
                                 </>
                             ) : (
                                 <>
-                                
-                                <div>Hi there signin please</div>
                                 <AuthProviders />
                                 </>
                             )
