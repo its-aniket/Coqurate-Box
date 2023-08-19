@@ -100,7 +100,7 @@ body {
   border-radius: 0px;
   border-bottom: 2px solid black;
 }
-.footer-email-input{
+.footer-Email-input{
   font-family: 'varela round',sans-serif;
   padding: 10px 45px 10px 0;
   color:black ;
@@ -109,7 +109,7 @@ body {
   placeholder:italic;
   @apply placeholder-black
 }
-.footer-email-input::placeholder{
+.footer-Email-input::placeholder{
   font-family: 'varela round';
   font-size: 0.75em;
   letter-spacing: 0.1em;

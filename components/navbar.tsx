@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { NavLinks, Announcement } from '@/constants'
 import AuthProviders from './AuthProviders'
 import {getCurrentUser} from '@/lib/session'
+import ProfileMenu from './ProfileMenu'
 
 
 const Navbar = async () => {
@@ -49,18 +50,11 @@ const Navbar = async () => {
                             />
                         </Link>
                     </div>
-                    <div className='justify-self-end pr-50px self-center gap-10' >
+                    <div className='flex justify-self-end pr-50px self-center gap-10' >
                         {
                             session?.user ? (
                                 <>
-                                    <Link href='/'>
-                                        {session?.user?.image &&(<Image
-                                            src='/user.png'
-                                            width={25}
-                                            height={25}
-                                            alt={session.user.name}
-                                        />)}
-                                    </Link>
+                                    <ProfileMenu session={session} />    
                                 </>
                             ) : (
                                 <>

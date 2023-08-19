@@ -19,7 +19,7 @@ export interface ProjectInterface {
     id: string;
     createdBy: {
       name: string;
-      email: string;
+      Email: string;
       avatarUrl: string;
       id: string;
     };
@@ -28,7 +28,7 @@ export interface ProjectInterface {
 export interface UserProfile {
     id: string;
     name: string;
-    email: string;
+    Email: string;
     description: string | null;
     avatarUrl: string;
     githubUrl: string | null;
@@ -48,7 +48,7 @@ export interface SessionInterface extends Session {
   user: User & {
     id: string;
     name: string;
-    email: string;
+    Email: string;
     avatarUrl: string;
   };
 }

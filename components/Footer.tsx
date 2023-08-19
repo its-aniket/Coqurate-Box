@@ -92,7 +92,7 @@ const Footer = () => {
           <div className='flex justify-center'>
             <div>
               <div className=' flex items-center Form--field footer-input-container'>
-                <input placeholder='Enter your email' className='bg-[#eeddb1] footer-email-input ' type='email' id='email' />
+                <input placeholder='Enter your Email' className='bg-[#eeddb1] footer-Email-input ' type='Email' id='Email' />
                 <button className='px-2'>
                   <Image
                     src='/mail.png'
