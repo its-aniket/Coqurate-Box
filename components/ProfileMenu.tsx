@@ -7,10 +7,10 @@ import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
 import { SessionInterface } from "@/common.types";
+import { User } from "next-auth";
 
 const ProfileMenu = ({ session }: { session: SessionInterface }) => {
     const [openModal, setOpenModal] = useState(false);
-
     return (
         <div className="flexCenter z-10 flex-col relative ">
             <Menu as="div" className=''>
@@ -54,11 +54,11 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                             )}
                             <p className="font-semibold">{session?.user?.name}</p>
                         </div>
-                        <div >
+                        {/* <div>
                             <Link href='/create-project'>
                                 Add Product
                             </Link>
-                        </div>
+                        </div> */}
                         <div className="w-full  flexStart border-t border-nav-border mt-5 pt-5">
 
                             <Menu.Item>
