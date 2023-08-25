@@ -4,8 +4,9 @@ export type FormState = {
     title: string;
     description: string;
     image: string;
-    liveSiteUrl: string;
-    githubUrl: string;
+    image1:string;
+    image2:string;
+    image3:string;
     category: string;
 };
 
@@ -13,8 +14,9 @@ export interface ProjectInterface {
     title: string;
     description: string;
     image: string;
-    liveSiteUrl: string;
-    githubUrl: string;
+    image1:string;
+    image2:string;
+    image3:string;
     category: string;
     id: string;
     createdBy: {
@@ -29,19 +31,7 @@ export interface UserProfile {
     id: string;
     name: string;
     Email: string;
-    description: string | null;
-    avatarUrl: string;
-    githubUrl: string | null;
-    linkedinUrl: string | null;
-    projects: {
-      edges: { node: ProjectInterface }[];
-      pageInfo: {
-        hasPreviousPage: boolean;
-        hasNextPage: boolean;
-        startCursor: string;
-        endCursor: string;
-      };
-    };
+    avatarUrl: string;  
 }
 
 export interface SessionInterface extends Session {
@@ -57,7 +47,8 @@ export interface ProjectForm {
   title: string;
   description: string;
   image: string;
-  liveSiteUrl: string;
-  githubUrl: string;
+  image1:string;
+  image2:string;
+  image3:string;
   category: string;
 }

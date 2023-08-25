@@ -44,6 +44,9 @@ const Project = g.model('Project', {
   title: g.string().length({ min: 3 }),
   description: g.string(), 
   image: g.url(),
+  image1: g.url(),
+  image2: g.url(),
+  image3: g.url(),
   category: g.string().search(),
 }).auth((rules) => {
   rules.public().read()
