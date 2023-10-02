@@ -17,7 +17,7 @@ type ProjectSearch ={
 }
 const Home= async()=>{
 
-    const data = await FetchAllProjects()as unknown as ProjectSearch;
+    const data = await FetchAllProjects("Corporate events")as unknown as ProjectSearch;
     const projectToDisplay =data?.projectSearch?.edges || [];
 
 
