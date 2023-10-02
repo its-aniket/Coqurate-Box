@@ -15,9 +15,10 @@ type ProjectSearch ={
     }
 }
 const Home= async()=>{
-
+    console.log("requiesting.....")
     const data = await FetchAllProjects("Corporate events") as ProjectSearch;
     const projectToDisplay =data?.projectSearch?.edges || [];
+    console.log(projectToDisplay)
 
 
     if(projectToDisplay.length === 0){
