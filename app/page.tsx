@@ -1,5 +1,4 @@
 import { ProjectInterface } from "@/common.types"
-import Slider from "@/components/Slider"
 import ProductCard from "@/components/projecctCard"
 import { FetchAllProjects } from "@/lib/actions"
 
@@ -17,7 +16,7 @@ type ProjectSearch ={
 }
 const Home= async()=>{
 
-    const data = await FetchAllProjects("Corporate events")as unknown as ProjectSearch;
+    const data = await FetchAllProjects("Corporate events") as ProjectSearch;
     const projectToDisplay =data?.projectSearch?.edges || [];
 
 
