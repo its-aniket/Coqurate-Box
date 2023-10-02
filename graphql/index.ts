@@ -21,11 +21,6 @@ export const createUserMutation = `
 	}
 `;
 
-
-
-
-
-
 export const createProjectMutation = `
 	mutation CreateProject($input: ProjectCreateInput!) {
 		projectCreate(input: $input) {
@@ -33,6 +28,7 @@ export const createProjectMutation = `
 				id
 				title
 				description
+        category
 			}
 		}
 	}
@@ -40,17 +36,14 @@ export const createProjectMutation = `
 
 export const updateProjectMutation = `
 	mutation UpdateProject($id: ID!, $input: ProjectUpdateInput!) {
-		projectUpdate(by: { id: $id }, input: $input) {
+		
 			project {
 				id
 				title
 				description
-				createdBy {
-					email
-					name
-				}
+        category
 			}
-		}
+		
 	}
 `;
 
@@ -76,18 +69,13 @@ export const projectsQuery = `
       edges {
         node {
           title
-          githubUrl
           description
-          liveSiteUrl
           id
           image
+          image1
+          image2
+          image3
           category
-          createdBy {
-            id
-            email
-            name
-            avatarUrl
-          }
         }
       }
     }
@@ -101,40 +89,10 @@ export const getProjectByIdQuery = `
       title
       description
       image
-      liveSiteUrl
-      githubUrl
+      image1
+      image2
+      image3
       category
-      createdBy {
-        id
-        name
-        email
-        avatarUrl
-      }
-    }
-  }
-`;
-
-
-      
-export const getProjectsOfUserQuery = `
-  query getUserProjects($id: ID!, $last: Int = 4) {
-    user(by: { id: $id }) {
-      id
-      name
-      email
-      description
-      avatarUrl
-      githubUrl
-      linkedinUrl
-      projects(last: $last) {
-        edges {
-          node {
-            id
-            title
-            image
-          }
-        }
-      }
     }
   }
 `;

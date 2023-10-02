@@ -1,39 +1,7 @@
-// import {GraphQLClient} from 'graphql-request'
-// import{ getUser ,createUserMutation} from '@/graphql/index'
-// const isProdution = process.env.NODE_ENV === 'production'
-// const apiUrl =isProdution ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL|| '':'http://127.0.0.1:4000/graphql';
-// const apikey =isProdution ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : '1234'
-// const serverUrl = isProdution ? process.env.NEXT_PUBLIC_SERVER_URL  : 'http://localhost:3000'
 
-// const client = new GraphQLClient(apiUrl);
-// const makeGraphQLRequest=async (query:string, variebles={}) => {
-//     try {
-//         return await client.request(query,variebles)
-//     } catch (error) {
-//         throw error;
-//     }
-// }
-
-// export const getuser =(Email:string )=>{
-//     client.setHeader('x-api-key',apikey);
-//     return makeGraphQLRequest(getUser, {Email}) 
-// }
-
-// export const createUser=(name:string,Email:string)=>{
-//     client.setHeader('x-api-key',apikey);
-//     const variebles ={
-//         input:{
-//             name,Email
-//         }
-//     }
-    
-//     return makeGraphQLRequest(createUserMutation, variebles) 
-// }
-
-// import { createUserMutation, getUserQuery } from "@/graphql";
 import { GraphQLClient } from "graphql-request";
 import { ProjectForm } from "@/common.types";
-import { createProjectMutation, createUserMutation, deleteProjectMutation, updateProjectMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery } from "@/graphql";
+import { createProjectMutation, createUserMutation, deleteProjectMutation, updateProjectMutation, getProjectByIdQuery, getUserQuery, projectsQuery } from "@/graphql";
 const isProduction = process.env.NODE_ENV === 'production';
 const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : 'http://127.0.0.1:4000/graphql';
 const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : 'letmein';
@@ -54,7 +22,7 @@ export const fetchToken = async () => {
 
 const makeGraphQLRequest = async (query: string, variables = {}) => {
   try {
-    return await client.request(query, variables);
+    return  client.request(query, variables);
   } catch (error) {
     throw error;
   }
@@ -140,7 +108,15 @@ export const createNewProject = async (form: ProjectForm, token: string) => {
         image3: imageUrl3.url,
       }
     };
-
     return makeGraphQLRequest(createProjectMutation, variables);
   }
 };
+export const FetchAllProjects =async(category?:string,endcursor?:string)=>{
+  client.setHeader('x-api-key',apiKey);
+  return makeGraphQLRequest(projectsQuery,{category,endcursor})
+}
+
+export const getProjectDetails =(id:string)=>{
+  client.setHeader('x-api-key',apiKey);
+  return makeGraphQLRequest(getProjectByIdQuery,{id});
+}

@@ -8,7 +8,7 @@ import CustomMenu from './CustomMenu';
 import { categoryFilters } from '@/constants';
 import { updateProject, createNewProject, fetchToken } from '@/lib/actions';
 import { FormState, ProjectInterface, SessionInterface } from '@/common.types';
-import { log } from 'console';
+import { error, log } from 'console';
 type Props = {
     type: string,
     session: SessionInterface,
@@ -78,6 +78,12 @@ const ProjectForm = ({ type, session, project }: Props) => {
 
             handleStateChange("image1", result)
         };
+        try {
+            console.log("succesfull")
+        } catch (error) {
+            
+            console.log(error);
+        }
     };
     const handleChangeImage2 = (e: ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();

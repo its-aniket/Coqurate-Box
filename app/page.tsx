@@ -1,10 +1,48 @@
+import { ProjectInterface } from "@/common.types"
 import Slider from "@/components/Slider"
-const Home=()=>{
+import ProductCard from "@/components/projecctCard"
+import { FetchAllProjects } from "@/lib/actions"
+
+type ProjectSearch ={
+    projectSearch:{
+        edges:{ node:ProjectInterface }[];
+        pageInfo:{
+            hasPreviousPage:boolean;
+            hasNextPage:boolean;
+            startCursor:string;
+            endCursor:string;
+            
+        }
+    }
+}
+const Home= async()=>{
+
+    const data = await FetchAllProjects("Corporate events")as unknown as ProjectSearch;
+    const projectToDisplay =data?.projectSearch?.edges || [];
+
+
+    if(projectToDisplay.length === 0){
+        return(
+            <section className="flexStart flex-col paddings">
+                category
+                <p>There are no products to showcase</p>
+            </section>
+        )
+    }
+
     return(
-        <section className="flex-start paddings flex-col  mb-16">
-            <Slider />
-            <h1>loadmore</h1>
-            <h1>loadmore</h1>
+        <section className="flex-start flex-col paddings mb-16">
+            <h1>Category</h1>
+            <section className="projects-grid">
+                {projectToDisplay.map(({node}:{ node:ProjectInterface})=>(
+                    <ProductCard 
+                        key={node?.id}
+                        id={node?.id}
+                        image={node?.image}
+                        title={node?.title}
+                    />
+                ))}
+            </section>
         </section>
     )
 }

@@ -19,12 +19,6 @@ export interface ProjectInterface {
     image3:string;
     category: string;
     id: string;
-    createdBy: {
-      name: string;
-      Email: string;
-      avatarUrl: string;
-      id: string;
-    };
 }
 
 export interface UserProfile {
