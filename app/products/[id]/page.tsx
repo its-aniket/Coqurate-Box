@@ -46,33 +46,67 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
               height={200}
               alt="poster"
             />
-        </section>
-        <section>
-          <Image
-           src={`${projectDetails?.image}`}
-            className="object-cover"
-            width={600}
-            height={700}
-            alt="poster"
-          />
-        </section>
-      </section>
-
-      {/* detail section */}
-        <section className="paddings">
-          <h2>{projectDetails?.title}</h2>
-          <section className="inline">
-            <span>share</span>
-            <Link href="/">
-                  <Image
-                    src='/linkedin.png'
-                    width={35}
-                    height={35}
-                    alt='instagram logo'
-                  />
-                </Link>
+          </section>
+          <section>
+            <Image
+              src={`${projectDetails?.image}`}
+              className="object-cover"
+              width={600}
+              height={700}
+              alt="poster"
+            />
           </section>
         </section>
+
+        {/* detail section */}
+        <section className="p-10">
+          <span className="font-extralight">
+            <Link href="/">
+              home/
+            </Link>
+          </span>
+          
+          <br/>
+          <h2>{projectDetails?.title}</h2>
+          <br />
+          <div className=" flex justify-center items-center p-2 bg-slate-400">
+          <Link href="/" className="flexBtween flex-inline">
+              <Image
+                src='/whatsapp_icon.png'
+                width={25}
+                height={25}
+                alt='whatsapp logo'
+              />
+            </Link>
+              <p>Do enqury now</p>
+          </div>
+          <br />
+          <hr className="font-light"/>
+          <br />
+          <br />
+          <p dangerouslySetInnerHTML={{ __html: projectDetails?.description }}></p>
+          {/* <p>{projectDetails?.description}</p> */}
+          <section className="inline-block">
+            <span>share</span>
+            <Link href="/">
+              <Image
+                src='/whatsapp_icon.png'
+                width={35}
+                height={35}
+                alt='whatsapp logo'
+              />
+            </Link>
+            <Link href="/">
+              <Image
+                src='/instagram_icon.png'
+                width={35}
+                height={35}
+                alt='whatsapp logo '
+              />
+            </Link>
+          </section>
+        </section>
+          <p dangerouslySetInnerHTML={{ __html: projectDetails?.description }}></p>
       </section>
       {/* <section className="flexBetween gap-y-8 max-w-4xl max-xs:flex-col w-full">
                 <div className="flex-1 flex items-start gap-5 w-full max-xs:flex-col">

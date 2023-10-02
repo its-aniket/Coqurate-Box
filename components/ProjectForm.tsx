@@ -8,7 +8,6 @@ import CustomMenu from './CustomMenu';
 import { categoryFilters } from '@/constants';
 import { updateProject, createNewProject, fetchToken } from '@/lib/actions';
 import { FormState, ProjectInterface, SessionInterface } from '@/common.types';
-import { error, log } from 'console';
 type Props = {
     type: string,
     session: SessionInterface,

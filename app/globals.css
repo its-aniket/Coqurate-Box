@@ -14,6 +14,9 @@
   font-family: 'varela round',sans-serif;
 }
 
+.div.Link.Image{
+
+}
 .flexCenter {
   @apply flex justify-center items-center;
 }
