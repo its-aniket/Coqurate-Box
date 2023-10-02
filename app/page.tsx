@@ -20,15 +20,6 @@ const Home= async()=>{
     const projectToDisplay =data?.projectSearch?.edges || [];
 
 
-    if(projectToDisplay.length === 0){
-        return(
-            <section className="flexStart flex-col paddings">
-                category
-                <p>There are no products to showcase</p>
-            </section>
-        )
-    }
-
     return(
         <section className="flex-start flex-col paddings mb-16">
             <h1>Category</h1>
