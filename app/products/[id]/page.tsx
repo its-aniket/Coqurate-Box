@@ -25,39 +25,38 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
       <section className="grid grid-cols-2 gap-5">
         <section className="flex gap-2">
           <section className="flex flex-col gap-2">
-
-          <Image
-            src={`${projectDetails?.image1}`}
-            className="object-cover"
-            width={150}
-            height={200}
-            alt="poster"
-            />
-          <Image
-            src={`${projectDetails?.image2}`}
-            className="object-cover"
-            width={150}
-            height={200}
-            alt="poster"
-            />
-          <Image
-            src={`${projectDetails?.image3}`}
-            className="object-cover"
-            width={150}
-            height={200}
-            alt="poster"
-            />
-          </section>
-          <section>
             <Image
-              src={`${projectDetails?.image}`}
+              src={`${projectDetails?.image1}`}
               className="object-cover"
-              width={600}
-              height={700}
+              width={150}
+              height={200}
               alt="poster"
             />
-          </section>
+            <Image
+              src={`${projectDetails?.image2}`}
+              className="object-cover"
+              width={150}
+              height={200}
+              alt="poster"
+            />
+            <Image
+              src={`${projectDetails?.image3}`}
+              className="object-cover"
+              width={150}
+              height={200}
+              alt="poster"
+            />
         </section>
+        <section>
+          <Image
+           src={`${projectDetails?.image}`}
+            className="object-cover"
+            width={600}
+            height={700}
+            alt="poster"
+          />
+        </section>
+      </section>
 
       {/* detail section */}
         <section className="paddings">
